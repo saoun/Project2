@@ -30,9 +30,9 @@ $('#addToDo').on('submit', function(e){
 function addNewItem(){
   var newLi = $('<li>');
   newLi.text(info);
-  newLi.append($('<br>'));
-  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-3 delete-button" name="{{id}}" id="delete"><i class="material-icons">delete</i></button>')
-  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-3 done-button" name="{{id}}" id="done"><i class="material-icons">done</i></button>')
+  // newLi.append($('<br>'));
+  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey delete-button" name="{{id}}" id="delete"><i class="material-icons">delete</i></button>')
+  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey done-button" name="{{id}}" id="done"><i class="material-icons">done</i></button>')
   $('#new-list').append(newLi)
 };
 
@@ -82,7 +82,4 @@ itemDone();
 
 });
 
-//add done button for boolean
 
-
-//add done button for boolean

@@ -1,6 +1,7 @@
 body {
   background: url('https://source.unsplash.com/random');
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #4E4E4E;
@@ -37,6 +38,16 @@ body {
 .container {
   margin-top: 10px;
   padding-top: 50px;
+}
+
+.done-button {
+  padding: 5px;
+  margin: 5px;
+}
+
+.delete-button {
+  padding: 5px;
+  margin: 5px;
 }
 
 li {

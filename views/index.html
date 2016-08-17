@@ -5,13 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../animate.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
 {{#logged_in}}
-<button class="logout btn-floating btn-medium waves-effect waves-light blue-grey "><a href='/logout'><i class="material-icons">power_settings_new</i></a></button>
+<button class="logout btn-floating btn-medium waves-effect waves-light blue-grey btn tooltipped" data-position="left" data-delay="50" data-tooltip="Logout"><a href='/logout'><i class="material-icons">power_settings_new</i></a></button>
 
   <div class="container">
 
