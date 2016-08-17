@@ -11,7 +11,7 @@
 
 <body>
 {{#logged_in}}
-<button class="logout btn-floating btn-small waves-effect waves-light blue-grey lighten-3"><a href='/logout'><i class="material-icons">power_settings_new</i></a></button>
+<button class="logout btn-floating btn-medium waves-effect waves-light blue-grey "><a href='/logout'><i class="material-icons">power_settings_new</i></a></button>
 
   <div class="container">
 
@@ -24,7 +24,7 @@
         <div class="col s4">
           <form id="addToDo" method="post" data-id="{{todo.id}}">
             <input class="center-align" text="text" id="input-field" value="{{todo}}"><br>
-            <button type="submit" class="btn-floating btn-large waves-effect waves-light blue-grey lighten-3"><i class="material-icons">add</i></button>
+            <button type="submit" class="btn-floating btn-large waves-effect waves-light blue-grey "><i class="material-icons">add</i></button>
           </form>
         </div>
         <div class="col s4"></div>
@@ -37,12 +37,12 @@
       <div class="col s6">
       <br>
         <div class='fadedBack'>
-          <h5>What's on your plate?</h5>
+          <p class='question'>What's on your plate?</p>
           <ul id="new-list">
           {{#data}}
             <li>{{info}}
-            <button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-2 delete-button" name="{{id}}" id="delete"><i class="material-icons">delete</i></button>
-            <button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-2 done-button" name="{{id}}" id="done"><i class="material-icons">done</i></button>
+            <button class="btn-floating btn-small waves-effect waves-light blue-grey delete-button" name="{{id}}" id="delete"><i class="material-icons">delete</i></button>
+            <button class="btn-floating btn-small waves-effect waves-light blue-grey done-button" name="{{id}}" id="done"><i class="material-icons">done</i></button>
             </li>
           {{/data}}
 
@@ -55,7 +55,7 @@
       <div id="done-list" class="col s6">
       <br>
         <div class='fadedBack' id="done-div">
-          <h5>You got it done!</h5>
+          <p class='question'>You got it done!</p>
           <ul id="done-ul">
           </ul>
         </div>
@@ -91,7 +91,7 @@
         </div>
         <div class="form-group">
           <div>
-            <button type="submit" class="btn btn-primary blue-grey lighten-2">Login</button>
+            <button type="submit" class="btn btn-primary blue-grey">Login</button>
           </div>
         </div>
       </form>

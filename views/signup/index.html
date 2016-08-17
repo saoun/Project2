@@ -4,44 +4,53 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="../public/style.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
+
 <div class="container">
-<h2>sign up</h2>
+  <div class="welcome hoverable">
+    <p id= "welcomeName" class="center-align">Sign Up</p>
 
-<div class='row'>
-<form action="/signup" method="post" class='col s12'>
-  <div class='row'>
-    <div class= 'input-field col s6'>
-      <div class="col-lg-10">
-        <input name="name" type="text" class="form-control" id="inputName" placeholder="Name">
-        <label for ='name'>Name</label>
-      </div>
-    </div>
+    <div class='row'>
+    <div class="col s4"></div>
+    <div class="col s4">
 
-    <div class= 'input-field col s6'>
-      <div class="col-lg-10">
-        <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
-        <label for ='email'>Email</label>
-      </div>
-    </div>
+<form action="/signup" method="post">
 
-    <div class= 'input-field col s6'>
-      <div class="col-lg-10">
-        <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
-        <label for='password'>Password</label>
-      </div>
-    </div>
+    <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Name</label>
+              <div>
+                  <input name="name" type="text" class="form-control" id="inputName" placeholder="Name">
+              </div>
+        </div>
 
-    <div class='input-field col s6'>
-        <button type="submit" class="btn btn-primary">Join!</button>
-    </div>
-  </div>
+    <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+              <div>
+                  <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
+        </div>
+
+    <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+              <div>
+                  <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+        </div>
+
+    <div class="form-group">
+          <div>
+            <button type="submit" class="btn btn-primary blue-grey">Sign Up</button>
+          </div>
+        </div>
 </form>
+</div>
+<div class="col s4"></div>
+</div>
 </div>
 </div>
 
@@ -51,5 +60,5 @@
 </body>
 </html>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="../public/script.js"></script>
+<script src="../script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
