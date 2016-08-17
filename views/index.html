@@ -11,70 +11,100 @@
 
 <body>
 {{#logged_in}}
+<button class="logout btn-floating btn-small waves-effect waves-light blue-grey lighten-3"><a href='/logout'><i class="material-icons">power_settings_new</i></a></button>
 
-<div class="container">
-<h2 class="center-align">Welcome {{name}}</h2>
-<div class="divider"></div>
-<h3 class="center-align">What do you want to achieve today?</h3>
-<div class="divider"></div>
+  <div class="container">
 
-<h4 class="center-align">Add ToDo</h4>
-<form id="addToDo" method="post" data-id="{{todo.id}}">
-  <input text="text" id="input-field" value="{{todo}}"><br>
-  <button type="submit" class="btn btn-primary">Save</button>
+    <div class="welcome hoverable">
 
-</form>
-</br>
-</br>
+      <p id= "welcomeName" class="center-align">Welcome {{name}}</p>
+      <p id= "welcomeMsg" class="center-align">What do you want to achieve today?</p>
+      <div class='row'>
+        <div class="col s4"></div>
+        <div class="col s4">
+          <form id="addToDo" method="post" data-id="{{todo.id}}">
+            <input class="center-align" text="text" id="input-field" value="{{todo}}"><br>
+            <button type="submit" class="btn-floating btn-large waves-effect waves-light blue-grey lighten-3"><i class="material-icons">add</i></button>
+          </form>
+        </div>
+        <div class="col s4"></div>
+      </div>
 
-<ul id="todo-list">
-</ul>
-<div id="new-list">
-  {{#data}}
-    <div>
-      <h5>{{info}}</h5>
-      </br>
-      <button class="btn btn-primary delete-button" name="{{id}}" id="delete">Delete</button>
-      <button class="btn btn-primary done-button" name="{{id}}" id="done">Done</button>
     </div>
-      </br>
-  {{/data}}
-</div>
 
-</div>
-<a href='/logout'>Logout</a>
+    <div class='row'>
+
+      <div class="col s6">
+      <br>
+        <div class='fadedBack'>
+          <h5>What's on your plate?</h5>
+          <ul id="new-list">
+          {{#data}}
+            <li>{{info}}
+            <button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-2 delete-button" name="{{id}}" id="delete"><i class="material-icons">delete</i></button>
+            <button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-2 done-button" name="{{id}}" id="done"><i class="material-icons">done</i></button>
+            </li>
+          {{/data}}
+
+          </ul>
+        </div>
+        <br>
+
+      </div>
+
+      <div id="done-list" class="col s6">
+      <br>
+        <div class='fadedBack' id="done-div">
+          <h5>You got it done!</h5>
+          <ul id="done-ul">
+          </ul>
+        </div>
+      </div>
+
+    </div>
 {{/logged_in}}
 
 
 
 {{^logged_in}}
-<h2>Log in</h2>
+<div class="container">
+  <div class="welcome hoverable">
+    <p id= "welcomeName" class="center-align">Log in</p>
 
-<div class='row'>
-<form action="/login" method="post" class='col s12'>
+    <div class='row'>
+    <div class="col s4"></div>
+    <div class="col s4">
 
-      <div class="form-group">
-          <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-            <div class="col-lg-10">
-                <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
-            </div>
-      </div>
-      <div class="form-group">
-          <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-10">
-                <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
-            </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <button type="submit" class="btn btn-primary">Login</button>
+      <form action="/login" method="post">
+
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+              <div>
+                  <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
         </div>
-      </div>
-  </fieldset>
-</form>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+              <div>
+                  <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <button type="submit" class="btn btn-primary blue-grey lighten-2">Login</button>
+          </div>
+        </div>
+      </form>
+      <br>
+      <p class="center-align">Not a member? <a href="/signup">Sign Up!</a></p>
+
+    </div>
+    <div class="col s4"></div>
+
+    </div>
+  </div>
 </div>
 
-<p>Not a member? <a href="/signup">Sign Up!</a></p>
 
 
 {{/logged_in}}

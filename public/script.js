@@ -28,34 +28,14 @@ $('#addToDo').on('submit', function(e){
 
 //appending a new list item
 function addNewItem(){
-  var newDiv = $('<div>');
-  newDiv.append($('<h5>').text(info));
-  newDiv.append('</br>');
-
-  newDiv.append('<button class="btn btn-primary delete-button">Delete</>')
-  // .click(function(){
-  //   $.ajax({
-  //     "url": "http://localhost:3000/todo/" + item.id,
-  //     "method": "DELETE",
-  //     "success" : function (todo){
-  //       console.log('ajax call was good for delete')
-  //     }
-  //   });
-  // });
-
-  newDiv.append('<button class="btn btn-primary done-button">Done</>')
-  //.click(function(){
-  //   $.ajax({
-  //     "url": "http://localhost:3000/todo/" + item.id,
-  //     "method" : "PUT",
-  //     "success": function (todo){
-  //       console.log('ajax call was good for done')
-  //     }
-  //   });
-  // });
-
-  $('#new-list').append(newDiv);
+  var newLi = $('<li>');
+  newLi.text(info);
+  newLi.append($('<br>'));
+  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-3 delete-button" name="{{id}}" id="delete"><i class="material-icons">delete</i></button>')
+  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey lighten-3 done-button" name="{{id}}" id="done"><i class="material-icons">done</i></button>')
+  $('#new-list').append(newLi)
 };
+
 
 
 //adding delete handler
@@ -63,6 +43,7 @@ function addDeleteHandler() {
   $('.delete-button').click(function(e) {
     var id = $(this).attr('name');
     $(this).parent().remove();
+
     $.ajax({
       "url": "http://localhost:3000/todo/" + id,
       "method": "DELETE",
@@ -79,7 +60,7 @@ addDeleteHandler();
 function itemDone(){
   $('body').on('click', '.done-button', function(e){
     var id = $(this).attr('name');
-    $(this).css('background-color', 'red');
+    $('#done-ul').append($(this).parent())
 
     $.ajax({
       "url": "/todo/" + id,
@@ -100,5 +81,8 @@ itemDone();
 
 
 });
+
+//add done button for boolean
+
 
 //add done button for boolean

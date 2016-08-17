@@ -1,7 +1,54 @@
 body {
-  background: url('https://hd.unsplash.com/photo-1466837838619-c8f5b8f0c166');
-  background-size: cover center fixed no-repeat;
+  background: url('https://source.unsplash.com/random');
+  background-size: cover;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+  color: #4E4E4E;
+}
+
+#welcomeName {
+  font-size: 40px;
+  font-weight: 200;
+}
+
+#welcomeMsg {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.logout {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+
+.fadedBack {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  color: grey;
+}
+
+.container {
+  margin-top: 10px;
+  padding-top: 50px;
+}
+
+li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+form {
+  text-align: center;
+}
+
+.welcome {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 0;
 }
 
