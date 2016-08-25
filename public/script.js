@@ -16,8 +16,7 @@ $('#addToDo').on('submit', function(e){
     "method": "POST",
     "data": todo,
     "success" : function (item){
-
-      addNewItem();
+      addNewItem(item.id);
       addDeleteHandler();
       itemDone()
 
@@ -27,12 +26,12 @@ $('#addToDo').on('submit', function(e){
 });
 
 //appending a new list item
-function addNewItem(){
+function addNewItem(id){
   var newLi = $('<li>');
   newLi.text(info);
   // newLi.append($('<br>'));
-  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey delete-button" name="{{id}}" id="delete"><i class="material-icons">delete</i></button>')
-  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey done-button" name="{{id}}" id="done"><i class="material-icons">done</i></button>')
+  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey delete-button" name="' + id + '" id="delete"><i class="material-icons">delete</i></button>')
+  newLi.append('<button class="btn-floating btn-small waves-effect waves-light blue-grey done-button" name="' + id + '" id="done"><i class="material-icons">done</i></button>')
   $('#new-list').append(newLi)
 };
 

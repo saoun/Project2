@@ -36,12 +36,15 @@ app.get('/', function(req, res){
     logged_in = true;
     email = req.session.user.email;
     var id = req.session.user.id;
+    var name = req.session.user.name;
+
     db.any("SELECT * FROM todo WHERE user_id = $1", [id]).
       then(function(resData){
         var data = {
           'logged_in':logged_in,
           'email': email,
-          'data': resData
+          'data': resData,
+          'name': name
         }
         res.render('index', data);
       });
