@@ -1,6 +1,6 @@
 # To-Do-App - Sarah Aoun
 
-This is an app project created for General Assembly's Web Dev Immersive - August 2016. 
+Simple to-do app with authentication, user accounts, and pulling from Unsplash's API.
 
 ##Set up
 CRUD app + REST API
